@@ -1,0 +1,123 @@
+.dictionary-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dictionary-page.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.dictionary-page.dark {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.result-display {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.light .result-display {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.dark .result-display {
+  border: 1px solid #555;
+  background-color: #444444;
+}
+
+.phonetics {
+  margin-bottom: 15px;
+}
+
+.meaning {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+audio {
+  margin-top: 10px;
+}
+
+.favorites-list {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.light .favorites-list {
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.dark .favorites-list {
+  border: 1px solid #555;
+  background-color: #444444;
+}
+
+.favorites-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.favorites-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.favorites-list span {
+  cursor: pointer;
+}
+
+.light .favorites-list span {
+  color: #0066cc;
+}
+
+.dark .favorites-list span {
+  color: #66b3ff;
+}
+
+.favorites-list button {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.light .favorites-list button {
+  background-color: #ff4d4d;
+}
+
+.dark .favorites-list button {
+  background-color: #cc3333;
+}
+
+.theme-toggle {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.light .theme-toggle {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.dark .theme-toggle {
+  background-color: #f9f9f9;
+  color: #333333;
+}

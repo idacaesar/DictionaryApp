@@ -3,18 +3,9 @@ import SearchBar from "../SearchBar";
 import ResultDisplay from "../ResultDisplay";
 import FavoritesList from "../FavoritesList";
 import ThemeToggle from "../ThemeToggle";
-import { searchWord } from "../dictionaryService";
+import { searchWord, WordData } from "../dictionaryService";
 import { useTheme } from "../ThemeContext";
 import "../Dictionary.css";
-
-interface WordData {
-  word: string;
-  phonetics: Array<{ text?: string; audio?: string }>;
-  meanings: Array<{
-    partOfSpeech: string;
-    definitions: Array<{ definition: string; example?: string }>;
-  }>;
-}
 
 const DictionaryPage: React.FC = () => {
   const [result, setResult] = useState<WordData | null>(null);

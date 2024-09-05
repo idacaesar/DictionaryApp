@@ -1,4 +1,3 @@
-import { act } from "react";
 import { render, fireEvent, screen, waitFor } from "@testing-library/react";
 import DictionaryPage from "./pages/DictionaryPage";
 import { searchWord } from "./dictionaryService";
@@ -27,7 +26,13 @@ describe("DictionaryPage", () => {
     mockSearchWord.mockResolvedValue([
       {
         word: "test",
-        meanings: [{ definitions: [{ definition: "A sample definition" }] }],
+        phonetics: [],
+        meanings: [
+          {
+            partOfSpeech: "noun",
+            definitions: [{ definition: "A sample definition" }],
+          },
+        ],
       },
     ]);
 

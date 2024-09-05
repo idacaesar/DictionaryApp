@@ -1,15 +1,28 @@
-import axios from "axios";
+// dictionaryService.ts
 
 const API_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
-export const searchWord = async (word: string) => {
+export interface WordData {
+  word: string;
+  phonetics: Array<{ text?: string; audio?: string }>;
+  meanings: Array<{
+    partOfSpeech: string;
+    definitions: Array<{ definition: string; example?: string }>;
+  }>;
+}
+
+export async function searchWord(word: string): Promise<WordData[]> {
   try {
-    const response = await axios.get(`${API_URL}${word}`);
-    return response.data;
-  } catch (error) {
-    if (axios.isAxiosError(error) && error.response?.status === 404) {
-      throw new Error("Word not found");
+    const response = await fetch(`${API_URL}${word}`);
+
+    if (!response.ok) {
+      throw new Error("Ordet hittades inte");
     }
-    throw new Error("An error occurred while fetching the data");
+
+    const data: WordData[] = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Ett fel uppstod vid sökningen:", error);
+    throw error;
   }
-};
+}

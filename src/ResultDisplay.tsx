@@ -1,13 +1,5 @@
 import React from "react";
-
-interface WordData {
-  word: string;
-  phonetics: Array<{ text?: string; audio?: string }>;
-  meanings: Array<{
-    partOfSpeech: string;
-    definitions: Array<{ definition: string; example?: string }>;
-  }>;
-}
+import { WordData } from "./dictionaryService";
 
 interface ResultDisplayProps {
   result: WordData | null;
@@ -15,7 +7,7 @@ interface ResultDisplayProps {
 
 const ResultDisplay: React.FC<ResultDisplayProps> = ({ result }) => {
   if (!result) return null;
-
+  console.log(result);
   return (
     <div className="result-display">
       <h2>{result.word}</h2>
